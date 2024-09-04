@@ -11,12 +11,15 @@ $id = $_GET['id'];
 $note = $db->query('select * from notes where id = :id', [':id' => $id])->fetch();
 
 
+
 if (!$note) {
     abort();
 }
 
-if ($note['user_id'] !== 1) {
-    abort(403);
+$currentUserID = 1;
+
+if ($note['user_id'] !== $currentUserID) {
+    abort(Response::FORBIDDEN);
 }
 
 $heading = "Note {$id}";
