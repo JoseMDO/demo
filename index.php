@@ -8,8 +8,13 @@ $config = require("config.php");
 
 $db = new Database($config['database']);
 
-$posts = $db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
+$id = $_GET["id"];
+$query = "select * from posts where id = ?";
 
-foreach ($posts as $post) {
-    echo "<li>" . $post["title"] . "</li>";
-}
+$post = $db->query($query, [$id])->fetch(PDO::FETCH_ASSOC);
+
+dd($post);
+
+// foreach ($posts as $post) {
+//     echo "<li>" . $post["title"] . "</li>";
+// }
