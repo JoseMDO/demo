@@ -2,7 +2,7 @@
 
 require "functions.php";
 require "Database.php";
-// require "router.php";
+require "router.php";
 
 $config = require("config.php");
 
@@ -13,5 +13,4 @@ $query = "select * from posts where id = ?";
 
 $post = $db->query($query, [$id])->fetch(PDO::FETCH_ASSOC);
 
-dd($post);
 
