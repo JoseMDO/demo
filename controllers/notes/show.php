@@ -9,4 +9,4 @@ $currentUserID = 1;
 
 authorize($note['user_id'] === $currentUserID);
 
-require "views/note.view.php";
+require "views/notes/show.view.php";
