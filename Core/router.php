@@ -1,5 +1,31 @@
 <?php   
 
+class Router {
+
+    protected $routes = [];
+
+    public function get($uri, $comtroller) {
+
+    }
+
+    public function post() {
+
+    }
+
+    public function delete() {
+
+    }
+
+    public function patch() {
+
+    }
+
+    public function put() {
+
+    }
+
+}
+
 
 function routeToController($routes, $uri) {
     if (array_key_exists($uri, $routes)) {
