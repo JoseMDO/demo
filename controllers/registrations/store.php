@@ -1,4 +1,4 @@
 <?php 
 
 
-dd("Store User :)");
+dd($_POST);
